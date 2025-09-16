@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xerfi - Where insight drives action</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: url('./images/bg-xerfi.png') center center / cover no-repeat;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            min-height: 100vh;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 4rem;
+            gap: 4rem;
+        }
+        
+        .hero-content {
+            justify-self: start;
+            max-width: 600px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.025em;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.125rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Manrope', sans-serif;
+        }
+        
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1e3a8a;
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .canvas-container {
+            justify-self: end;
+            position: relative;
+        }
+        
+        #threejs-canvas {
+
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        #threejs-canvas canvas {
+            display: block;
+            border-radius: 12px;
+            width: 100% !important;
+            height: 100% !important;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Where insight<br>
+                drives action
+            </h1>
+            <p class="hero-subtitle">
+                Xerfi est un institut d'études spécialisé en analyse 
+                nomique, analyse concurrentielle, prévisions et 
+                conjoncture, en France et à l'international.
+            </p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">
+                    <span>✨</span>
+                    Posez une question à notre IA
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    Découvrir nos études
+                </a>
+            </div>
+        </div>
+        
+        <div class="canvas-container">
+            <div id="threejs-canvas"></div>
+        </div>
+    </div>
+    
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.156.1/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.156.1/examples/jsm/",
+                "dat.gui": "https://unpkg.com/dat.gui@0.7.9/build/dat.gui.module.js"
+            }
+        }
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

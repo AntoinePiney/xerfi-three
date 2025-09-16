@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('./images/bg-xerfi.png') center center / cover no-repeat;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        
+        #container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        canvas {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    </div>
+    
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.156.1/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.156.1/examples/jsm/",
+                "dat.gui": "https://unpkg.com/dat.gui@0.7.9/build/dat.gui.module.js"
+            }
+        }
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
